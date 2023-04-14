@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1075
+	github.com/baidubce/bce-sdk-go v0.9.148
 	github.com/satori/go.uuid v1.2.0
 	github.com/tencentcloud/tencentcloud-sdk-go v1.0.154
 	github.com/twilio/twilio-go v0.26.0

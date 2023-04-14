@@ -14,8 +14,12 @@ type BceClient struct {
 	core     *sms.Client
 }
 
-func GetBceClient(accessId, accessKey, endpoint, sign, template string) (*BceClient, error) {
-	client, err := sms.NewClient(accessId, accessKey, endpoint)
+func GetBceClient(accessId, accessKey, sign, template string, endpoint []string) (*BceClient, error) {
+	if len(endpoint) < 1 {
+		return nil, fmt.Errorf("missing parameter: endpoint")
+	}
+
+	client, err := sms.NewClient(accessId, accessKey, endpoint[0])
 	if err != nil {
 		return nil, err
 	}
